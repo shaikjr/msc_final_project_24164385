@@ -1,3 +1,37 @@
+# Multimodal Brain Tumour Classification Using MRI and CT Images
+
+**Student:** Mahaboob Shaik (SRN: 24164385)  
+**Supervisor:** Wajih Islam  
+**Programme:** MSc Data Science and Analytics, University of Hertfordshire  
+**Repository:** [https://github.com/shaikjr/msc_final_project_24164385](https://github.com/shaikjr/msc_final_project_24164385)  
+
+---
+
+## 1. Project Overview
+This repository holds the Visible In-Progress (VIP) practical work, data preprocessing pipelines, model architectures, experiment logs, and evaluation outputs for classifying brain tumours across MRI and CT neuroimaging modalities.
+
+### Problem Statement & Research Question
+Single-modality neuroimaging can miss complementary diagnostic information: MRI provides superior soft-tissue contrast, whereas CT captures bone structures and calcifications accurately. This project investigates whether conditional dual-branch feature-level fusion of MRI and CT scans improves brain tumour classification accuracy, generalisation, and clinical interpretability compared to single-modality deep learning baselines.
+
+### Key Objectives
+1. **Data Curation & Cleaning:** Standardise, deduplicate (via MD5 hashing), and resize MRI and CT brain tumour scans (`9,618` total images across Healthy and Tumor classes) to `224×224` RGB tensors with zero data leakage across stratified train, validation, and test splits.
+2. **Baseline Benchmarking (`baseline` branch):** Implement and evaluate single-modality baseline architectures (Basic CNN, ResNet18, and EfficientNet-B0) independently on MRI and CT datasets.
+3. **Proposed Multimodal Fusion (`proposed-method` branch):** Design and implement a conditional dual-branch feature-level fusion architecture combining MRI and CT feature representations, supported by Grad-CAM visual explainability.
+4. **Validation & Reproducibility:** Verify pipeline integrity via unit tests, stratified validation, and held-out test metrics (Accuracy, Precision, Recall, Macro-F1, ROC-AUC), exporting publication-ready figures and LaTeX tables for the Interim Progress Report (IPR) and Final Project Report (FPR).
+
+---
+
+## 2. Repository Structure
+
+```text
+msc_final_project_24164385/
+├── MSC_final_project.ipynb      # Primary VIP notebook (EDA, cleaning, models, validation, viva demo)
+├── Literature_Extraction.xlsx   # Structured literature review matrix
+├── figures/                     # Exported high-resolution plots (300 DPI) and LaTeX tables (.tex)
+├── results/                     # Experiment tracking logs (experiments.csv)
+├── data/                        # Local raw and cleaned datasets (excluded from Git via .gitignore)
+├── .gitignore                   # Excludes local datasets, checkpoints, and environment files
+└── README.md                    # Project overview, setup, and VIP workflow documentation
 # MSc Final Project
 
 This template holds your project notebook (`MSC_final_project.ipynb`). You build your work step by step, and your supervisor can see how it develops.
